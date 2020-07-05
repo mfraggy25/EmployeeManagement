@@ -5,9 +5,8 @@
   "author": "Michael Fragiskatos",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "build": "node build/build.js",
     "start": "node server.js"
   },
   "dependencies": {
