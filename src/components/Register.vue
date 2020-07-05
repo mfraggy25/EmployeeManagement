@@ -49,7 +49,7 @@ export default {
         .then(
           user => {
             // console.log(user);
-            alert(`Account Created for ${user.email}`);
+            alert(`Account Created!`);
             this.$router.go({ path: this.$router.path });
           },
           err => {
