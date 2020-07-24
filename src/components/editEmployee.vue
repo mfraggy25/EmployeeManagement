@@ -23,12 +23,23 @@
             <input type="text" v-model="position" required />
           </div>
         </div>
-        <button type="submit" class="btn">
-          Submit
-        </button>
-        <router-link to="/" class="btn grey">
-          Cancel
-        </router-link>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" v-model="date_started" required placeholder="mm/dd/yyyy" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" v-model="email" required />
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" v-model="number" required placeholder="(123)123-1234" />
+          </div>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+        <router-link to="/" class="btn grey">Cancel</router-link>
       </form>
     </div>
   </div>
@@ -43,7 +54,10 @@ export default {
       employee_id: null,
       name: null,
       dept: null,
-      position: null
+      position: null,
+      date_started: null,
+      email: null,
+      number: null
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -57,6 +71,9 @@ export default {
             vm.name = doc.data().name;
             vm.dept = doc.data().dept;
             vm.position = doc.data().position;
+            vm.date_started = doc.data().date_started;
+            vm.email = doc.data().email;
+            vm.number = doc.data().number;
           });
         });
       });
@@ -75,6 +92,9 @@ export default {
             this.name = doc.data().name;
             this.dept = doc.data().dept;
             this.position = doc.data().position;
+            this.date_started = doc.data().date_started;
+            this.email = doc.data().email;
+            this.number = doc.data().number;
           });
         });
     },
@@ -89,7 +109,10 @@ export default {
                 employee_id: this.employee_id,
                 name: this.name,
                 dept: this.dept,
-                position: this.position
+                position: this.position,
+                date_started: this.date_started,
+                email: this.email,
+                number: this.number
               })
               .then(() => {
                 this.$router.push({

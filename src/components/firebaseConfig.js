@@ -1,7 +1,7 @@
 export default {
   apiKey: "AIzaSyCdOTLXSR_Qw5PaMU3H7uukqrK1642tsUM",
-  authDomain: "vueproject-a883a.firebaseapp.com",
-  databaseURL: "https://vueproject-a883a.firebaseio.com",
+  authDomain: "",
+  databaseURL: "",
   projectId: "vueproject-a883a",
   storageBucket: "vueproject-a883a.appspot.com",
   messagingSenderId: "944946415889",

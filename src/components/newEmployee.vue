@@ -27,12 +27,26 @@
             <label>Position</label>
           </div>
         </div>
-        <button type="submit" class="btn">
-          Submit
-        </button>
-        <router-link to="/" class="btn grey">
-          Cancel
-        </router-link>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" v-model="date_started" required placeholder="mm/dd/yyyy" />
+            <label>Date Started</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" v-model="email" required />
+            <label>Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" v-model="number" placeholder="(123)123-1234" />
+            <label>Phone Number</label>
+          </div>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+        <router-link to="/" class="btn grey">Cancel</router-link>
       </form>
     </div>
   </div>
@@ -47,7 +61,10 @@ export default {
       employee_id: null,
       name: null,
       dept: null,
-      position: null
+      position: null,
+      date_started: null,
+      email: null,
+      number: null
     };
   },
   methods: {
@@ -57,7 +74,10 @@ export default {
           employee_id: this.employee_id,
           name: this.name,
           dept: this.dept,
-          position: this.position
+          position: this.position,
+          date_started: this.date_started,
+          email: this.email,
+          number: this.number
         })
         .then(docRef => this.$router.push("/"))
         .catch(error => console.log(err));

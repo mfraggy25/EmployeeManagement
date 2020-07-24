@@ -7,6 +7,9 @@
       <li class="collection-item">Employee ID#: {{ employee_id }}</li>
       <li class="collection-item">Department: {{ dept }}</li>
       <li class="collection-item">Position: {{ position }}</li>
+      <li class="collection-item">Date Started: {{ date_started }}</li>
+      <li class="collection-item">Email: {{ email }}</li>
+      <li class="collection-item">Phone Number: {{ number }}</li>
     </ul>
     <router-link to="/" class="btn grey">Back</router-link>
     <button @click="deleteEmployee" class="btn red">Delete</button>
@@ -33,7 +36,10 @@ export default {
       employee_id: null,
       name: null,
       dept: null,
-      position: null
+      position: null,
+      date_started: null,
+      email: null,
+      number: null
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -47,6 +53,9 @@ export default {
             vm.name = doc.data().name;
             vm.dept = doc.data().dept;
             vm.position = doc.data().position;
+            vm.date_started = doc.data().date_started;
+            vm.email = doc.data().email;
+            vm.number = doc.data().number;
           });
         });
       });
@@ -65,6 +74,9 @@ export default {
             this.name = doc.data().name;
             this.dept = doc.data().dept;
             this.position = doc.data().position;
+            this.date_started = doc.data().date_started;
+            this.email = doc.data().email;
+            this.number = doc.data().number;
           });
         });
     },
